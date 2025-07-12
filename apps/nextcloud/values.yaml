@@ -4,6 +4,13 @@ nextcloud:
   extraEnv:
     - name: OVERWRITEPROTOCOL
       value: https
+  configs:
+    custom.config.php: |
+      <?php
+      $CONFIG = array (
+        'skeletondirectory' => '',
+        'hide_login_form' => true,
+      );
 
 cronjob:
   enabled: true
