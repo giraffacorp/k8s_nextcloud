@@ -1,0 +1,33 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nextcloud
+spec:
+  project: default
+  sources:
+    - repoURL: https://nextcloud.github.io/helm
+      chart: nextcloud
+      targetRevision: 6.6.10
+      helm:
+        valueFiles:
+          - $app/apps/nextcloud/values.yaml
+    - repoURL: https://github.com/giraffacorp/k8s_apps.git
+      targetRevision: HEAD
+      ref: app
+      path: apps/nextcloud
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: nextcloud
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        maxDuration: 3m
+        factor: 2
+    syncOptions:
+      - CreateNamespace=true

@@ -1,0 +1,27 @@
+---
+nextcloud:
+  host: nextcloud.maddin.dev
+  extraEnv:
+    - name: OVERWRITEPROTOCOL
+      value: https
+
+cronjob:
+  enabled: true
+
+internalDatabase:
+  enabled: false
+externalDatabase:
+  enabled: true
+  type: postgresql
+  host: nextcloud-db-rw:5432
+  existingSecret:
+    enabled: true
+    secretName: nextcloud-db-app
+    usernameKey: username
+    passwordKey: password
+    databaseKey: dbname
+
+persistence:
+  enabled: true
+  storageClass: synology
+  size: 500Gi
