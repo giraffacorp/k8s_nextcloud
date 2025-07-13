@@ -10,6 +10,7 @@ nextcloud:
       $CONFIG = array (
         'skeletondirectory' => '',
         'hide_login_form' => true,
+        'files.chunked_upload.max_size' => 99000000,
       );
 
 cronjob:
