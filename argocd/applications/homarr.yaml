@@ -10,7 +10,7 @@ spec:
   sources:
     - repoURL: https://homarr-labs.github.io/charts/
       chart: homarr
-      targetRevision: 5.2.1
+      targetRevision: 5.2.2
       helm:
         valueFiles:
           - $app/apps/homarr/values.yaml
