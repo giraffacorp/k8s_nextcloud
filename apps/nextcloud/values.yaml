@@ -1,9 +1,6 @@
 ---
 nextcloud:
   host: nextcloud.maddin.dev
-  extraEnv:
-    - name: OVERWRITEPROTOCOL
-      value: https
   configs:
     custom.config.php: |
       <?php
