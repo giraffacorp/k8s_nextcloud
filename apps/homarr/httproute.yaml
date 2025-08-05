@@ -18,9 +18,3 @@ spec:
       backendRefs:
         - name: homarr
           port: 7575
-      filters:
-        - type: RequestHeaderModifier
-          requestHeaderModifier:
-            set:
-              - name: X-Forwarded-Proto
-                value: https
