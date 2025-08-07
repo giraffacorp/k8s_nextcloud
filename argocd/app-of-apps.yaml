@@ -2,10 +2,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd
+  name: nextcloud
 spec:
   source:
-    repoURL: https://github.com/giraffacorp/k8s_apps.git
+    repoURL: https://github.com/giraffacorp/k8s_nextcloud.git
     targetRevision: HEAD
     path: argocd/applications
   destination:

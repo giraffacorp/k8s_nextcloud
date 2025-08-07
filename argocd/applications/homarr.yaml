@@ -4,7 +4,7 @@ kind: Application
 metadata:
   name: homarr
   labels:
-    app-type: homelab
+    app-type: nextcloud
 spec:
   project: default
   sources:
@@ -14,7 +14,7 @@ spec:
       helm:
         valueFiles:
           - $app/apps/homarr/values.yaml
-    - repoURL: https://github.com/giraffacorp/k8s_apps.git
+    - repoURL: https://github.com/giraffacorp/k8s_nextcloud.git
       targetRevision: HEAD
       ref: app
       path: apps/homarr
