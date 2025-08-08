@@ -27,7 +27,16 @@ externalDatabase:
     passwordKey: password
     databaseKey: dbname
 
+redis:
+  enabled: true
+  auth:
+    enabled: true
+    existingSecret: nextcloud-redis
+    existingSecretPasswordKey: password
+  global:
+    storageClass: ceph-block
+
 persistence:
   enabled: true
   storageClass: synology
-  size: 500Gi
+  size: 600Gi
