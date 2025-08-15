@@ -6,15 +6,20 @@ metadata:
   namespace: nextcloud
 spec:
   parentRefs:
-    - name: gateway-cloudflare
+    - group: gateway.networking.k8s.io
+      kind: Gateway
+      name: gateway-cloudflare
       namespace: kube-system
   hostnames:
     - "nextcloud.maddin.dev"
   rules:
-    - matches:
+    - backendRefs:
+        - group: ""
+          kind: Service
+          name: nextcloud
+          port: 8080
+          weight: 1
+      matches:
         - path:
             type: PathPrefix
             value: /
-      backendRefs:
-        - name: nextcloud
-          port: 8080

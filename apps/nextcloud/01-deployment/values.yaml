@@ -38,5 +38,9 @@ redis:
 
 persistence:
   enabled: true
-  storageClass: synology
-  size: 600Gi
+  storageClass: ceph-block
+  size: 16Gi
+  nextcloudData:
+    enabled: true
+    storageClass: synology
+    size: 1000Gi
