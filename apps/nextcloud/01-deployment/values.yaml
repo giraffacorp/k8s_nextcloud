@@ -24,7 +24,6 @@ nextcloud:
       <?php
       $CONFIG = array (
         'skeletondirectory' => '',
-        'hide_login_form' => true,
         'maintenance_window_start' => 2,
         'files.chunked_upload.max_size' => 99000000,
       );
