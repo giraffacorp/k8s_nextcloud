@@ -1,6 +1,9 @@
 ---
 nextcloud:
   host: nextcloud.maddin.dev
+  extraEnv:
+    - name: TRUSTED_PROXIES
+      value: "10.244.0.0/24 10.244.1.0/24 10.244.2.0/24 169.254.0.0/16"
   configs:
     previews.config.php: |-
       <?php
