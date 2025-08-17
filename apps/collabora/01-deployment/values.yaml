@@ -1,0 +1,23 @@
+---
+replicaCount: 3
+
+ingress:
+  enabled: false
+
+image:
+  tag: "latest"
+
+autoscaling:
+  enabled: false
+
+collabora:
+  aliasgroups:
+    - host: "https://nextcloud.maddin.dev:443"
+
+  extra_params: "--o:ssl.enable=false --o:ssl.termination=true --o:num_prespawn_children=3"
+
+  existingSecret:
+    enabled: true
+    secretName: "collabora-creds"
+    usernameKey: "username"
+    passwordKey: "password"

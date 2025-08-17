@@ -1,0 +1,25 @@
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: collabora-route
+  namespace: nextcloud
+spec:
+  parentRefs:
+    - group: gateway.networking.k8s.io
+      kind: Gateway
+      name: gateway-cloudflare
+      namespace: kube-system
+  hostnames:
+    - "collabora.maddin.dev"
+  rules:
+    - backendRefs:
+        - group: ""
+          kind: Service
+          name: collabora-collabora-online
+          port: 9980
+          weight: 1
+      matches:
+        - path:
+            type: PathPrefix
+            value: /

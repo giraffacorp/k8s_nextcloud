@@ -1,0 +1,9 @@
+---
+appName: ""
+appProject: "nextcloud"
+destNamespace: "nextcloud"
+namespaceMetadata: {}
+srcTargetRevision: ""
+syncOptions: []
+labels: {}
+annotations: {}
