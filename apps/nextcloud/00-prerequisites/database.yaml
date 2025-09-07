@@ -4,8 +4,6 @@ kind: Cluster
 metadata:
   name: nextcloud-db
   namespace: nextcloud
-  annotations:
-    argocd.argoproj.io/sync-wave: "-1"
 spec:
   instances: 3
   imagePullPolicy: IfNotPresent
