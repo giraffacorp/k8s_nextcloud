@@ -10,6 +10,6 @@ helmCharts:
   - name: collabora-online
     repo: https://collaboraonline.github.io/online/
     releaseName: collabora
-    version: 1.1.47
+    version: 1.1.48
     valuesFile: values.yaml
     namespace: nextcloud
